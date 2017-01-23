@@ -1,0 +1,141 @@
+/**
+ * 论坛页面
+ */
+.main_box_style1 .main_box_inner_left{
+	position: relative;
+	float: none;
+	width: 99%;
+	
+	border-bottom: 1px dotted #0086cc;
+}
+
+.main_box_style1 .nav_box{
+	width: 20%
+
+}
+
+#nav_161{
+	position: absolute;
+	top: 0;
+	right: 50px;
+	width: 200px;
+}
+
+#nav_161 li a{
+	color: #fff;
+	border-radius: 10px;
+	background-color: #0086cc;
+}
+#nav_161 li a:hover{
+	background-color: #11cccc;
+}
+
+.nav_menu li a.current{
+	color: #0086cc;
+	background-color: #FFF;
+}
+
+.nav_menu li a:hover{
+	color: #0086cc;
+	background-color: #FFF;
+}
+
+
+.main_box_style1 .main_box_inner_right{
+	float: none;
+	width: 100%;
+}
+
+.sublanmu_box_737 .item{
+	padding: 10px 0;
+	position: relative;
+	line-height: 40px;
+	border-bottom: 1px solid #aaa;
+}
+.sublanmu_box_737 .item .item-inner{
+	transition: 0.4s;
+}
+.sublanmu_box_737 .item .item-inner:hover{
+	background-color: #eee;
+}
+.sublanmu_box_737 .item .title{
+	margin-left: 65px;
+	width: 60%;
+	overflow: hidden;
+}
+.sublanmu_box_737 .item .title a{
+    font-size: 18px;
+    color: #666;
+}
+.sublanmu_box_737 .item .title a:hover{
+	color: #0086cc;
+}
+.sublanmu_box_737 .item .author{
+	width: 100px;
+	text-align: right;
+	overflow: hidden;
+	min-height: 40px;
+}
+
+.sublanmu_box_737 .item .fenge{
+	margin: 0 10px;
+}
+.sublanmu_box_737 .item .thedate{
+	margin-right: 50px;
+}
+
+.sublanmu_box_737 .sublanmu_page{
+	text-align: right;
+}
+
+.sublanmu_box_737 .sublanmu_page span{
+	padding: 4px 11px 4px 11px;
+	color: #0086cc;
+}
+
+.sublanmu_box_737 .sublanmu_page a{
+	padding: 4px 11px 4px 11px;
+	border: none;
+	color: #fff;
+	background-color:#3291C3;
+}
+.sublanmu_box_737 .sublanmu_page a:hover{
+	background-color: #11cccc;
+}
+
+
+/**
+ * 发表文章
+ */
+
+.bbs_table td{
+	text-align: center;
+	font-size: 15px;
+	border: 1px solid #0086cc !important;
+	color: #0086cc;
+	background-color: #fff;
+}
+.bbs_table .t_right{
+	text-align: left;
+}
+
+.bbs_table .title{
+	width: 80%;
+    outline: none;
+    border: 1px solid #0086cc;
+    text-indent: 1em;
+    height: 100%;
+    line-height: 100%;
+}
+
+.bbs_table .bt{
+	width: 20%;
+	height: 30px;
+	line-height: 30px;
+	border: none;
+	color: #fff;
+	background: #0088cc;
+}
+.bbs_table .bt:hover{
+	background-color: #11cccc;
+}
