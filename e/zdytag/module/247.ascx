@@ -17,7 +17,7 @@ map.addControl(new BMap.OverviewMapControl());
 var marker = new BMap.Marker(point);                        
 map.addOverlay(marker);
 var infoWinOpts = {}
-var sitetxt="<div style='text-align:left;color:#333;line-height:25px;'><li>地址：浙江省义乌市稠州北路800号金福源B区3楼336号 </li><li>电话： 86 0579 85678881</li><li>手机： 15757998555</li></div>";
+var sitetxt="<div style='text-align:left;color:#333;line-height:25px;'><li>地址：浙江省义乌市稠州北路800号金福源B区3楼336号 </li><li>电话： 86 0579 85678881</li><li>手机： 15757911188</li></div>";
 var infoWin = new BMap.InfoWindow(sitetxt,infoWinOpts);
 marker.openInfoWindow(infoWin);
 marker.addEventListener("click",function(){this.openInfoWindow(infoWin);});//注册点击事件
@@ -26,10 +26,10 @@ marker.addEventListener("click",function(){this.openInfoWindow(infoWin);});//注
 <div class="sy_lx_fs">
 <span class="tit">金福源国际库存交易中心</span>
 <span class="s1">电话：+86 0579 85678881 </span>
-<span class="s2">手机：+86 15757998555</span>
-<span class="s3">QQ：56xxx6678</span>
-<span class="s4">微信公众号：zjwxxxe</span>
-<span class="s5">邮箱：ixxxfo@emilsp.com</span>
+<span class="s2">手机：+86 15757911188</span>
+<span class="s3">QQ：3199323252</span>
+<span class="s4">微信公众号：jfystock</span>
+<span class="s5">邮箱：3199323252@qq.com</span>
 </div>
 </div>
 <%End();%>

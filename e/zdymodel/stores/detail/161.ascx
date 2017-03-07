@@ -47,28 +47,21 @@ if(dt.Rows.Count>0)
 </div>
 
 -->
-<div class="m-store-info">
-<ul class="store-info-list">
-</ul>
-<div class="background-color"></div>
-</div>
-
 <script>
 
 var _store_data = {};
-_store_data.title = '<%=dr["title"].ToString()%>';
-_store_data.name  = '<%=dr["pa_name"].ToString()%>';
-_store_data.qq    = '<%=dr["pa_qq"].ToString()%>';
-_store_data.titlepic = '<%=dr["titlepic"].ToString()%>';
-_store_data.tel   = '<%=dr["pa_tel"].ToString()%>'
-_store_data.wx    = '<%=dr["pa_wx"].ToString()%>';
+_store_data.title     = '<%=dr["title"].ToString()%>';
+_store_data.name      = '<%=dr["pa_name"].ToString()%>';
+_store_data.qq        = '<%=dr["pa_qq"].ToString()%>';
+_store_data.titlepic  = '<%=dr["titlepic"].ToString()%>';
+_store_data.tel       = '<%=dr["pa_tel"].ToString()%>'
+_store_data.wx        = '<%=dr["pa_wx"].ToString()%>';
 _store_data.store_num = '<%=dr["pa_store_num"].ToString()%>';
 _store_data.content   = '<%=dr["content"].ToString()%>';
-_store_data.img_url   ='<%=img_url%>';
+_store_data.img_url   = '<%=img_url%>';
+_store_data.Sort_Id   = '<%=Sort_Id%>'
 </script>
-<div class="store-pic-slide">
 <script src="/e/templates/150703/storescenter/content/content.js"></script>
-</div>
 <% 
  }
 %><%conn.Close();%>

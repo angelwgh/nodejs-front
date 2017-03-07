@@ -1,13 +1,23 @@
 ﻿@import url(comm.css);
 @import url(/e/css/focus.css);
-@import url(/e/css/iconfont/iconfont.css);
+@import url(diy.css);
+/* @import url(/e/css/iconfont/iconfont.css); */
+
+
+@font-face {font-family: 'iconfont';
+    src: url('/e/css/iconfont/iconfont.eot'); /* IE9*/
+    src: url('/e/css/iconfont/iconfont.eot?#iefix') format('embedded-opentype'), /* IE6-IE8 */
+    url('/e/css/iconfont/iconfont.woff') format('woff'), /* chrome、firefox */
+    url('/e/css/iconfont/iconfont.ttf') format('truetype'), /* chrome、firefox、opera、Safari, Android, iOS 4.2+*/
+    url('/e/css/iconfont/iconfont.svg#iconfont') format('svg'); /* iOS 4.1- */
+}
 
 /*网站基础样式*/
 html{-webkit-text-size-adjust:none;}
 body,div,dl,dt,dd,ul,ol,li,h1,h2,h3,h4,h5,h6,pre,code,form,fieldset,legend,input,textarea,th,td,p,blockquote,hr,button,article,aside,details,figcaption,figure,footer,header,hgroup,menu,nav,section{margin:0px;padding:0px;}
 article,aside,details,figcaption,figure,footer,header,hgroup,menu,nav,section{display:block;}
 audio,canvas,video{display:inline-block;*display:inline;*zoom:1;}
-body{font:14px/1.8 "Segoe UI",Tahoma,Arial,\5b8b\4f53;background-color:#FFFFFF;padding-top:43px;color:#333}
+body{font:14px/1.8 "微软雅黑","Segoe UI",Tahoma,Arial,\5b8b\4f53;background-color:#FFFFFF;padding-top:43px;color:#333}
 
 input,select,textarea,button{font-size:100%;}
 table{border-collapse:collapse;border-spacing:0;}
@@ -19,6 +29,7 @@ li{list-style:none;*margin-left:-1px}
 .clear{display:block;clear:both;font-size:0px;height:0px;line-height:0px;width:0px;margin:0px;padding:0px;overflow:hidden}
 a{color:#333;text-decoration:none}
 .page_style{margin:0px auto;width:100%;margin:0px auto;background-color:#EBEBEB;text-align:center;}
+.ibk{display: inline-block}
 
 
 /*顶部及主菜单样式*/
@@ -51,11 +62,13 @@ a{color:#333;text-decoration:none}
 .menu_box .mobile_arrow{position:relative;height:9px;display:none}
 .menu_box .mobile_arrow .arrow{display:block;position:absolute;z-index:2;right:2px;width:0px;height:0px;border-left:8px solid transparent;border-right:8px solid transparent;border-bottom:10px solid #2F2F2F;}
 
-.menu_box ul{clear:both;width:100%;background-color:#333;border-radius:2px;box-shadow:0px 1px 1px #666;overflow:hidden;}
+.menu_box a:hover{color:#fff;}
+
+.menu_box ul{clear:both;width:100%;background-color:rgba(51,51,51,.8);border-radius:2px;box-shadow:0px 1px 1px #666;overflow:hidden;}
 .menu_style_homepage{float:left;width:100%;text-align:left;padding:0px;border-top:1px solid #000;border-bottom:1px solid #000;}
 .menu_style{float:left;width:100%;text-align:left;padding:0px;border-bottom:1px solid #000;}
 
-a.menu{display:block;color:#ececec;line-height:45px;font-size:1.2em;padding-left:20px;}
+a.menu{display:block;color:#ececec;line-height:50px;font-size:1.8em;padding-left:20px;}
 
 /*banner样式*/
 .banner{clear:both;padding:0px;margin:0px;overflow:hidden;background:#fff}
@@ -63,7 +76,7 @@ a.menu{display:block;color:#ececec;line-height:45px;font-size:1.2em;padding-left
 
 /*网站主体框架样式*/
 
-.main_box_style{clear:both;margin:0px;overflow:hidden;}
+.main_box_style{clear:both;margin:0px;overflow:hidden;margin-bottom: 50px;}
 
 .main_box_style1{clear:both;height:100%;overflow:hidden;}
 .main_box_style1 .main_box_inner{margin:0px;}
@@ -114,9 +127,9 @@ a.menu{display:block;color:#ececec;line-height:45px;font-size:1.2em;padding-left
 .module_box_inner{clear:both;text-align:center;padding:5px 0 5px 0;border:0px solid #cccccc;overflow:hidden;height:100%;}/*模块内层容器样式*/
 .module_box_layout_left .module_box_inner{clear:both;text-align:center;margin:0 10px 0 0;padding:5px 0 5px 0;} /*模块居左时重写内层样式*/
 
-.module_title{height:40px;text-align:left;background-color:#196EBB;background:-webkit-gradient(linear,0 0,0 100%,from(#196EBB),to(#0669C4));}
+.module_title{height:50px;text-align:left;background-color:#333;background:-webkit-gradient(linear,0 0,0 100%,from(#333),to(#444));}
 
-.module_sign{float:left;text-align:left;font-size:1.2em;font-weight:bold;padding-left:10px;color:#fff;line-height:40px}
+.module_sign{float:left;text-align:left;font-size:1.5em;font-weight:bold;padding-left:10px;color:#fff;line-height:50px}
 .module_more{float:right;font-weight:normal;width:30%;}
 .module_more a{display:block;font-size:1.1em;line-height:40px;padding-right:12px;color:#fff;text-align:right}
 .module_more a .iconfont{font-size:1.2em;color:#efefef;line-height:40px}
@@ -175,11 +188,29 @@ a.menu{display:block;color:#ececec;line-height:45px;font-size:1.2em;padding-left
 
 
 /*bottom样式*/
-.bottom_box{clear:both;padding:15px 10px;text-align:cetenr;line-height:30px;background-color:#9FCCDF;color:#333;font-size:13px;overflow:hidden}
+.bottom_box{position: fixed; bottom: 0;z-index: 999; width: 100%;height: 50px; clear:both;padding:0px 0px;text-align:cetenr;line-height:30px;background-color:#333;color:#fff;font-size:13px;}
 .bottom_box a{color:#333;}
 
 .bottom_box a.sj_pc{line-height:20px;color:#0066CC;font-size:14px}
 
+.bottom_box .fa{
+	line-height: 50px;
+	font-size: 38px;
+}
+.bottom_box .home{
+	position: absolute;
+    bottom: 25px;
+    left: 50%;
+    width: 50px;
+    height: 50px;
+    border-radius: 50%;
+    border: 1px solid #333;
+    box-shadow: 0 0 2px 2px #666;
+    color: #333;
+    transform: translate(-50%);
+    -webkit-transform: translate(-50%);
+    background-color: #fff;
+}
 
 /*登陆界面*/
 .loginbox_item{height:20px;padding:0 0 0 0;padding:0 5px 5px 0;text-align:left;font-size:9pt;}
@@ -192,48 +223,3 @@ a.logined_href:hover{font-size:9pt;color:#FF0000;text-decoration:underline}
 
 
 
-/*首页店铺列表模块*/
-
-.m-storeslist > ul > li{
-	float: left;
-	width: 50%;
-	padding: 10px 20px;
-	box-sizing: border-box;
-}  
-
-@media (max-width: 760px) {
-	.m-storeslist > ul > li{
-		padding: 2px 5px;
-	}
-	
-}
-
-.m-storeslist > ul > li > a {
-	display: block;
-    border-radius: 10px;
-    border: 1px solid #ff6600;
-    box-shadow: 0 3px 3px #aaa;
-    box-sizing: border-box;
-    overflow: hidden;
-}
-
-
-
-.m-storeslist > ul > li > a > img{
-	max-width: 100%;
-    height: auto;
-    display: block;
-    width: 100%;
-}
-
-.m-storeslist > ul > li > a > span{
-	display: block;
-    text-align: center;
-    font: 30px/60px '微软雅黑';
-}
-
-@media (max-width: 760px) {
-	.m-storeslist > ul > li > a > span{
-		font: 15px/30px '微软雅黑';
-	}
-}

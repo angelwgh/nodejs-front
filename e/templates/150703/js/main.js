@@ -7,7 +7,7 @@ require.config({
     　　　　}
 });
 
-require(["feedback","slide_main","menu","login"], function (feedback){
+require(["feedback","slide_main","menu","animated"], function (feedback){
 
 });
 

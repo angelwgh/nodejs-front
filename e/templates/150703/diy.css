@@ -19,8 +19,15 @@
 /*banner*/
 .banner_com{width:1100px;margin:0 auto;position:relative;}
 
-
-
+/*视频*/
+.m-video{
+	position: relative;
+	z-index: 2;
+}
+.m-video .m-video-layer{
+	position: absolute;
+	top:-400px; 
+}
 
 /*首页_滚动新闻*/
 #module_225
@@ -124,6 +131,8 @@
 	float: left;
 }
 
+
+
 .sy_lianxi .sy_lx_map .map{
 	margin:0;
 	width:800px;
@@ -144,6 +153,17 @@
 	width: 360px;
 	height: 300px;
 	border-radius: 4px;
+	transform:scale(0);
+	-webkit-transform:scale(0);
+	transition: 1s;
+	-webkit-transition: 1s;
+}
+
+.sy_lx_fs.animated{
+	transform-origin:right top;
+	-webkit-transform-origin:right top;
+	transform:scale(1);
+	-webkit-transform:scale(1);
 }
 
 @media (max-width: 1220px){
@@ -185,6 +205,16 @@
 	overflow: hidden;
 	border: 1px solid #0086cc;
 	background-color: #fff;
+	transform: translate(1000px);
+    -webkit-transform: translate(1000px);
+    transition: 0.5s;
+    -webkit- transition: 0.5s;
+}
+
+.m-message.animated{
+	transform: translate(0);
+    -webkit-transform: translate(0);
+
 }
 
 .m-message .title{
@@ -271,6 +301,15 @@
     box-shadow: inset 1px 1px 5px #999,2px 2px 5px #666;
     background-color: #eee;
     margin-bottom: 10px;
+    transform: translate(-1000px);
+    -webkit-transform: translate(-1000px);
+    transition: 0.5s;
+    -webkit- transition: 0.5s;
+}
+
+.m-jfy-slide.animated{
+	transform: translate(0);
+    -webkit-transform: translate(0);
 }
 
 .m-jfy-slide .img-show{
@@ -357,8 +396,30 @@
 .m-info-center .item{
 	float: left;
 	width: 25%;
-	
+	transform: translate(-1500px);
+	-webkit-transform: translate(-1500px);
+	transition: 0.5s;
+}
+.m-info-center .item:nth-of-type(1){
+	transition: 0.5s 1.5s;
+	-webkit-transition: 0.5s 1.5s;
+}
+.m-info-center .item:nth-of-type(2){
+	transition: 0.5s 1s;
+	-webkit-transition: 0.5s 1s;
+}
+.m-info-center .item:nth-of-type(3){
+	transition: 0.5s .5s;
+	-webkit-transition: 0.5s 0.5s;
+}
+.m-info-center .item:nth-of-type(4){
+	transition: 0.5s;
+	-webkit-transition: 0.5s;
+}
 
+.m-info-center .item.animated{
+	transform: translate(0);
+	-webkit-transform: translate(0);
 }
 .m-info-center .item .cir1,
 .m-info-center .item .cir2,
@@ -370,7 +431,7 @@
 	border-radius: 50%;
 	color: #333;
 	background-color: #ccc;
-	transition:background-color 0.4s;
+	transition:0.4s;
 }
 .m-info-center .item .cir2{
 	margin: 3px;
@@ -395,11 +456,17 @@
 	text-align: center;
 	font-size: 16px;
 }
+.m-info-center .item .cir3:hover{
+	transform: scale(1.1,1.1);
+}
 .m-info-center .item .cir1:hover,
 .m-info-center .item .cir1:hover .cir3{
 	background-color: #20a6ff;
 	color: #fff;
 }
+
+
+
 
 /**
  * 首页账号登陆
@@ -502,6 +569,23 @@
 	top: 0;
 	left: 240px;
 }
+
+
+/**
+ * 首页地图模块
+ */
+
+.sy_lx_map{
+	transform: rotate(0) scale(0);
+	transition: 0.5s;
+	-webkit-transition: 1.5s;
+}
+
+.sy_lx_map.animated{
+	transform: rotate(720deg) scale(1);
+	-webkit-transform: rotate(720deg) scale(1);
+}
+
 
 /*底部*/
 .dibu{background:#484848;}

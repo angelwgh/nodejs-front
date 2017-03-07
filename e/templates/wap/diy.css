@@ -1,0 +1,104 @@
+/**
+ * 联系电话
+ */
+.m-lxphone{
+	width: 100%;
+}
+
+.m-lxphone.btn{
+	padding: 12px;
+
+	font-size: 25px;
+	background-color: #333;
+	border-color: #333;
+}
+
+.m-lxphone.btn:hover{
+	background-color: #111;
+}
+
+.m-lxphone .fa{
+	margin-right: 10px;
+}
+
+/*---------------------------------------------------------------------------*/
+/**
+ * 首页新闻中心
+ */
+
+
+/*---------------------------------------------------------------------------*/
+
+/**
+ * 页面导航
+ */
+.page-nav .btn::before{
+	content: "";
+	display: inline-block;
+	width: 0;
+	height: 100%;
+	vertical-align: middle;
+}
+
+.page-nav .col-xs-4 {
+	padding: 0 2px;
+}
+
+.page-nav .btn{
+	width: 100%;
+}
+.page-nav .ibk{
+	vertical-align: middle;
+}
+.page-nav .ibk i,
+.page-nav .ibk span{
+	display: block;
+	line-height: 1.5;
+}
+/*---------------------------------------------------------------------------*/
+
+/*首页店铺列表模块*/
+
+.m-storeslist > ul > li{
+	float: left;
+	width: 50%;
+	padding: 10px 20px;
+	box-sizing: border-box;
+}  
+
+@media (max-width: 760px) {
+	.m-storeslist > ul > li{
+		padding: 2px 5px;
+	}
+	
+}
+
+.m-storeslist > ul > li > a {
+	display: block;
+    border-radius: 10px;
+    border: 1px solid #ff6600;
+    box-shadow: 0 3px 3px #aaa;
+    box-sizing: border-box;
+    overflow: hidden;
+}
+
+
+
+.m-storeslist > ul > li > a > img{
+	max-width: 100%;
+    height: auto;
+    display: block;
+    width: 100%;
+}
+
+.m-storeslist > ul > li > a > span{
+	display: block;
+    text-align: center;
+    font: 30px/60px '微软雅黑';
+}
+
+@media (max-width: 760px) {
+	.m-storeslist > ul > li > a > span{
+		font: 15px/30px '微软雅黑';
+	}
+}

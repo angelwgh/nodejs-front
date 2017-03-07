@@ -3,6 +3,6 @@
 <% @ Import NameSpace="System.Data.OleDb"%>
 <%Start();%>
 <div>
-<% @ Register TagPrefix="ascx" TagName="M_0" src="/e/zdymodel/article/module/43.ascx"%><ascx:M_0 runat="server" TagSiteId=1 SiteId=9 ZdyTag=1 ModuleId="252_0" TagTable="article" TagSortId=600 SqlOrder="order by " SqlCondition="" ShowNum=5 TagZtId=0 TitleNum=50 TitlePicWidth=150 TitlePicHeight=150 TheTarget="_self"/>
+<% @ Register TagPrefix="ascx" TagName="M_0" src="/e/zdymodel/article/module/185.ascx"%><ascx:M_0 runat="server" TagSiteId=1 SiteId=9 ZdyTag=1 ModuleId="252_0" TagTable="article" TagSortId=597 SqlOrder="order by " SqlCondition="" ShowNum=5 TagZtId=0 TitleNum=50 TitlePicWidth=150 TitlePicHeight=150 TheTarget="_self"/>
 </div>
 <%End();%>

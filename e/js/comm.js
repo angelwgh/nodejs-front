@@ -303,3 +303,10 @@ function Link_Open(link,Target) //友情链接
 document.write("<script src=\"/e/js/function.js\" type=\"text/javascript\"></script>");
 document.write("<script src=\"/e/js/dialog.js\" type=\"text/javascript\"></script>");                                                                    
 document.write("<script src=\"/e/incs/pie/PIE.js\" type=\"text/javascript\"></script>");
+
+
+$(function(){
+   $("title").html('金福源国际库存交易中心');
+   $("div[align]").html("")
+
+});

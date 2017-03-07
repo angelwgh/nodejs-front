@@ -9,17 +9,31 @@
 <%}%><%conn.Open();%><% 
 DataTable dt=Get_Data();
 DataRow dr;
+int Id;
+
 string data="[";
 for(int i=0;i<dt.Rows.Count;i++)
  {
   dr=dt.Rows[i]; //说明：给dr赋值
+  Id=int.Parse(dr["id"].ToString());//获取图片组所属信息id;
 
-  data +="{"+"'id':"+dr["id"]+ ",'Detail_Url':'"+ Detail_Url(dr) + "','titlepic':'"+dr["titlepic"].ToString()+"','title':'"+dr["title"].ToString()+"','pa_store_num':'"+dr["pa_store_num"].ToString()+"'},";
+
+     DataTable dt_imgs = Get_File("stores","pa_imgs",Id);//获取图片组附件表集合
+     DataRow dr_img;
+     String img_url = "";
+     int img_count = dt_imgs.Rows.Count;
+     for(int j = 0;j<img_count; j++){
+         dr_img =  dt_imgs.Rows[j];
+         img_url = img_url + dr_img["url"].ToString() + "|";
+     }
+
+  data +="{"+"'id':"+dr["id"]+ ",'Detail_Url':'"+ Detail_Url(dr) + "','titlepic':'"+dr["titlepic"].ToString()+"','title':'"+dr["title"].ToString()+"','pa_store_num':'"+dr["pa_store_num"].ToString()+"','pa_imgs':'"+img_url+"'},";
  }
 data=data.TrimEnd(',');
 data +="]";
 %>
-stores_data["<%=Sort_Id%>"] = <%=data%>
+stores_data["<%=Sort_Id%>"] = <%=data%>;
+
 
 <%conn.Close();%>
    <%if(Zdy_Tag==0 && CleanContainer<2){%></div>

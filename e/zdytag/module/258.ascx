@@ -23,7 +23,17 @@
 <!--[if lt IE 9]>
 <div class="clear"><div>
 <![endif]-->
-    </ul>
+</ul>
+<div class="main-goods">
+    <div class="floor-num">
+       -1
+    </div>
+    <div class="content">
+          日用百货，工艺品，鞋，帽子，五金工具，玩具，户外用品，饰品，文具用品，厨房用品，塑料用品，玻璃制品，仿真花，彩灯
+Daily necessities，Crafts，Shoes，Hat，Hardware tools，Toys，Outdoor product，Jewelry，Plastic products，Cultural and sports supplies，Kitchen supplies，Lights,Glass product，Simulation flowers
+    </div>
+</div>
+    <ul class="paging-nav"></ul>
     <div class="storse-list">
         <script>
           var stores_data={};
@@ -42,4 +52,5 @@
 <div class="clear"><div>
 <![endif]-->
     </div>
+<div class="paging-nav-2"></div>
 <%End();%>

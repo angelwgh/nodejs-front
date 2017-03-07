@@ -107,8 +107,8 @@ a.gotoptop_icon:hover{background-position:0px 0px;}
 
 
 .article_time{padding:0 20px 20px 20px;}
-.article_time li{clear:both;overflow:hidden;padding:20px 0;border-bottom:1px #DDD solid}
-.article_time li .time{float:left;width:70px;background:#D5B345;color:#FFF;padding:10px 0;}
+.article_time li{clear:both;height:40px;line-height:40px;padding:0px 0 3px 15px;text-align:left;border:0px dashed #cccccc;border-width:0 0 1px 0;overflow:hidden;font-size:14px;background:url(images/site_icon.gif) no-repeat left center;}
+.article_time li .time{float:left;width:70px;background:#3194ff;color:#FFF;padding:10px 0;}
 .article_time li .time span{display:block;text-align:center;}
 .article_time li .time span.t1{height:35px;line-height:35px;font-size:20px;}
 .article_time li .time span.t2{height:20px;line-height:20px;font-size:14px;}

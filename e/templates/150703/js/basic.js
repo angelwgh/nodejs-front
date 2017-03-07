@@ -51,16 +51,19 @@ define([],function () {
 		data.win_width      = $(window).width();
 		data.win_height     = $(window).height();
 		//元素窗口尺寸
-		data.width          = element.width();
-		data.height         = element.height();
-		//元素窗口相对浏览器窗口的距离
-		data.fixed_top      = element[0].getBoundingClientRect().top ;
-		data.fixed_left     = element[0].getBoundingClientRect().left;
-		data.fixed_bottom   = data.win_height - element[0].getBoundingClientRect().bottom;
-		data.fixed_right    = data.win_width  - element[0].getBoundingClientRect().right;
-		//元素相对上一个定位元素的位置
-		data.left           = element.position().left;
-		data.top            = element.position().top;
+		if (element) {
+			data.width          = element.width();
+			data.height         = element.height();
+			//元素窗口相对浏览器窗口的距离
+			data.fixed_top      = element[0].getBoundingClientRect().top ;
+			data.fixed_left     = element[0].getBoundingClientRect().left;
+			data.fixed_bottom   = data.win_height - element[0].getBoundingClientRect().bottom;
+			data.fixed_right    = data.win_width  - element[0].getBoundingClientRect().right;
+			//元素相对上一个定位元素的位置
+			data.left           = element.position().left;
+			data.top            = element.position().top;
+		}
+		
 
 		/*鼠标位置信息*/
 		if (event) {
