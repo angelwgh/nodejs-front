@@ -306,7 +306,6 @@ document.write("<script src=\"/e/incs/pie/PIE.js\" type=\"text/javascript\"></sc
 
 
 $(function(){
-   $("title").html('金福源国际库存交易中心');
    $("div[align]").html("")
 
 });

@@ -6,9 +6,9 @@
     .floor-list{width: 100%;}
     .floor-list::after{content: "";display: block;clear: both}
     .floor-list > li{float: left;width: 20%}
-    .floor-list > li > h2{margin: auto; width: 90%;height: 50px; line-height: 50px; text-align:center;color: #666;border-radius: 10px 10px 0 0; background-color: #fff;cursor: default;transition: 0.5s;-wenkit-transition:0.5s;}
-	.floor-list > li > h2:hover{ color: #fff; background-color: #3194ff; }
-	.floor-list > li.active > h2{color: #fff; background-color: #3194ff; }
+    .floor-list > li  h2{margin: auto; width: 90%;height: 50px; line-height: 50px; text-align:center;color: #666;border-radius: 10px 10px 0 0; background-color: #fff;cursor: default;transition: 0.5s;-wenkit-transition:0.5s;}
+	.floor-list > li  h2:hover{ color: #fff; background-color: #3194ff; }
+	.floor-list > li.active   h2{color: #fff; background-color: #3194ff; }
 
 	.storse-list > .floor{width: 100%;margin-top: 20px;}
 	.storse-list > .floor > .items-list::after{content: "";display: block;clear: both;}
@@ -93,20 +93,26 @@
 /*翻页器*/
 .paging-nav{}
 
-.paging-nav li{
+.paging-nav li,
+.paging-nav a{
 	float: left;
 	padding: 5px 10px;
 	border: 1px solid transparent;
 	cursor: pointer;
 	background-color: #fff;
+
 }
 
 
-.paging-nav li:hover{
+.paging-nav li:hover,
+.paging-nav a:hover{
 	color: #3194ff;
 	border-color: #3194ff;
 }
-.paging-nav li.active{
+
+
+.paging-nav li.active,
+.paging-nav a.active{
 	color: #fff;
 	background-color: #3194ff;
 }
