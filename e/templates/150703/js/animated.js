@@ -34,8 +34,10 @@ define(['jquery','basic'],function ($,$wgh) {
 
 	}
 
+
+
 	function animate () {
-		addclass ($infoCenter,$item);
+		
 		addclass ($slide,$slide);
 		addclass ($message,$message);
 		addclass ($sy_lianxi,$map);

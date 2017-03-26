@@ -6,7 +6,7 @@ var storesApp=angular.module('storesApp',[
 		'storesList'
 	]);
 
-
+//路由设置
 	storesApp.config(['$routeProvider',function($routeProvider) {
 		$routeProvider.when('/645/1',{
 			templateUrl:'/e/templates/150703/storescenter/appHtml/app.html',
@@ -111,30 +111,28 @@ storesList.controller('storesListCtrl', ['$scope','$routeParams', function($scop
 		if (typeof element.pa_imgs == "string") {
 			element.pa_imgs=element.pa_imgs.slice(0,element.pa_imgs.length-1).split('|');
 		}
-		element.thum_imgs = element.pa_imgs.slice(1, 5);
 		element.titlepic = element.pa_imgs[0]
 	});
 
 
-	$scope.bigPic=function (event) {
+	$scope.bigPic=function ($event,store) {
 		//console.log(event.target);
+		store.isShow = true;
+		var $storeElem=$('.store_'+store.id);
+		var $position = $storeElem.position();
+		console.log($position)
 		
-		var $big_pic=$(event.target).parent().find('.big-pic');
-		var $big_pic_img=$('');
-		var $position = $(event.target).parent().position();
-		if($position.top<=0){
-			$big_pic.css('top', '0');
-		}
+			store.top = $position.top<=0 ? true : false;
+		
 
-		if($position.left>=600){
-			$big_pic.css('left','-200%');
-		}
-
-		$big_pic.show()
+		
+			store.left = $position.left>=600 ? true : false;
+		
 	}
 
-	$scope.delBigPic=function () {
-		$('.big-pic').hide();
+	$scope.delBigPic=function (store) {
+		//console.log(store)
+		store.isShow=false
 
 	}
 

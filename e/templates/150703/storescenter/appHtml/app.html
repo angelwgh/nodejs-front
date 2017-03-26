@@ -37,8 +37,8 @@
 	<div class="storse-list">
         <div class="floor">
             <ul class="items-list">
-            	<li ng-repeat="store in showStorList" class="store f-pr">
-            		<div class="inner-box"  ng-mouseenter="bigPic($event)" ng-mouseleave="delBigPic()">
+            	<li ng-repeat="store in showStorList | orderBy:'title'" class="store f-pr {{'store_'+store.id}}">
+            		<div class="inner-box"  ng-mouseenter="bigPic($event,store)" ng-mouseleave="delBigPic(store)">
 	            		<a class="img" ng-href="{{store.Detail_Url}}">
 	            			<img ng-src="{{store.titlepic}}" alt="">
 	            		</a>
@@ -48,13 +48,13 @@
 	            		<p ng-bind="store.pa_store_num"></p>
             		</div>
             		<ul class="thum_imgs">
-            			<li class="thum_img" ng-repeat="thum_img in store.thum_imgs">
+            			<li class="thum_img" ng-repeat="thum_img in store.pa_imgs | limitTo : 4">
             				<div class="thum_img_box">
             					<img ng-src="{{thum_img}}" ng-click="changeTitlePic(store,thum_img)">
             				</div>
             			</li>
             		</ul>
-            		<div class="big-pic" style="display: none;">
+            		<div class="big-pic" ng-if="store.isShow" ng-class="{'pleft':store.left==true,'ptop':store.top==true}">
             			<img ng-src="{{store.titlepic}}">
             		</div>
             	</li>

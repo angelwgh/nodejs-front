@@ -39,6 +39,8 @@
 
 	.storse-list  .store .big-pic{position: absolute;z-index: 999; bottom: 100px;left:100%;height: 450px;border: 2px solid #3194ff;padding: 3px; font-size: 0; background-color: #FFF;box-shadow: 3px 3px 15px 2px rgba(55, 55, 55, .4)}
 						 .big-pic img{width: 600px;height: 450px;}
+						 .big-pic.ptop{top:0;}
+						 .big-pic.pleft{left:-210% !important;}
 
 .m-storse-center .main-goods{
 	height: 320px;
