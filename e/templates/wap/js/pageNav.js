@@ -3,19 +3,23 @@ define(['jquery'],function ($) {
 		
 	}
 
-	PageNav.prototype.getElem = function(elem){
+	PageNav.prototype._getElem = function(elem){
 		this.elem = elem;
 	};
 
-	PageNav.prototype.getData = function(){
+	//获取元素属性
+	PageNav.prototype._getData = function(){
 		this.width = this.elem.width();
 		this.height = this.width*4/5;
 		this.fontSize = this.width/5;
 		this.fontFamily='微软雅黑';
 	};
 
-	PageNav.prototype.setData = function () {
-		this.getData();
+	//根据元素属性设置样式
+	PageNav.prototype._setData = function (elem) {
+		this._getElem(elem);
+
+		this._getData();
 
 		this.elem.css({
 				height: this.height,
@@ -24,7 +28,12 @@ define(['jquery'],function ($) {
 			})
 	}
 
-	
+	PageNav.prototype.setDomStyle = function (elem) {
+		this._setData(elem);
+		$(window).resize(function () {
+			this._setData(elem);
+		})
+	}
 	var pageNav = new PageNav();
 
 	return pageNav;

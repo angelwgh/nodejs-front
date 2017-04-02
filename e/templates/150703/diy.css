@@ -60,7 +60,55 @@
 .sy_newszx .tw_articlea{margin:0 0}
 .sy_newszx .tw_articlea li{width:100%;border:none;}
 
+/*首页联系qq模块*/
 
+.m-qq{
+	position: fixed;
+	z-index: 99;
+	right: 5px;
+	top: 50%;
+	border-radius: 5px;
+	width: 150px;
+	min-height: 30px;
+	padding-bottom: 5px;
+	background-color: #0086cc;
+
+	transform: translate(0, -50%);
+	-webkit-transform: translate(0, -50%);
+}
+
+.m-qq .title{
+	color: #fff;
+	font-size: 25px;
+}
+
+.m-qq .qq-ico{
+	margin: 5px;
+	color: #0086cc;
+	font-size: 50px;
+	background-color: #fff
+}
+
+.m-qq .word{
+	margin: 0px auto;
+	width: 60px;
+	border: 1px solid #fff;
+	border-radius: 5px;
+	color: #fff;
+	transition: 0.2s
+}
+.m-qq .word a{
+	color: #fff;
+	transition: 0.2s
+}
+
+.m-qq .word:hover a{
+	color: #0086cc;
+
+}
+.m-qq .word:hover{
+	background-color: #fff
+}
 
 /* 首页_店铺展示 */
 #module_245 .module_box_inner{margin:10px auto;}
