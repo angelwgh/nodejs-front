@@ -22,7 +22,7 @@ for(int i=0;i<dt.Rows.Count;i++)
     <div class="tel-icon">
          <i class="fa fa-phone"></i>
     </div>
-    <div class="tel-num-list sd">
+    <div class="tel-num-list">
           <div class="bg"></div>
           <div class="close btn btn-primary"><i class="fa fa-close"></i></div>
           <ul>
