@@ -100,17 +100,18 @@ var storeDetails = new StoreDetails();
 		this.page_num = 0;//页面数量
 	};
 
-	SwitchPage.prototype.setPage = function(view_ele,pages){
+	SwitchPage.prototype.setPage = function(view_ele,pages,pages_list){
 		this.view      = view_ele;  //页面显示区域
-		this.pages     = pages;    //显示的月面内容
+		this.pages     = pages;    //显示的页面内容
+		this.pages_list= pages_list;
 		this.view_h    = this.view[0].offsetHeight  //可视窗口的高度
 		this.page_num  = this.pages.length;
-		pages.height(this.view_h);
+		pages.height(this.view_h);                  //设置页面高度
 	};
 
 	SwitchPage.prototype.switch = function (view_ele,pages_list,pages) {
 
-		this.setPage(view_ele,pages);
+		this.setPage(view_ele,pages,pages_list);
 
 		var view = view_ele[0];
 		var that = this;
@@ -134,52 +135,94 @@ var storeDetails = new StoreDetails();
 
 				var move_y = end_y-start_y;
 				
-				switchPage (move_y);
+				switchPage (pages_list,move_y);
 			}
 		}
 		
-		function switchPage (move_y){
-			var k = 0;
-			if(move_y>0){
-				k=1;//往下滑动
-				if (that.page_index <=0) {
-					return;
-				}
-			}else if (move_y<0) {
-				k=-1; //往上滑动
-				if(that.page_index >= that.page_num -1){
-					return
-				}
-			}
-
-			
-			var target = (-(that.page_index-k))*that.view_h;
-			var length = target- (-that.page_index)*that.view_h;
-			//console.log(target)
-			var timer = setInterval(function () {
-				length = parseInt(length*9/10)
-				//console.log(target)
-				var y = parseInt(target-length);
-				pages_list.css('margin-top', y);
-
-				if (length == 0) {
-					clearInterval(timer)
-				}
-			}, 10)
-			
-			that.page_index += -k;
+		function switchPage (pages_list,move_y){
+			return that.switchPage(move_y)
 		}
 
+	}
 
+	SwitchPage.prototype.switchPage=function (move_y) {
+		var k = 0;
+		var that=this;
+		console.log(this.page_index)
+		console.log(move_y)
+		if (move_y) {
+			if(move_y>0){
+				/*k=1;//往下滑动
+				if (this.page_index <=0) {
+					return;
+				}*/
+				this.page_index = this.page_index <=0 ? this.page_index:this.page_index-1;
+			}else if (move_y<0) {
+				/*k=-1; //往上滑动
+				if(this.page_index >= this.page_num -1){
+					return
+				}*/
+				this.page_index = this.page_index >= this.page_num-1 ? this.page_index  :this.page_index+1
+			}
+		}
+
+		console.log(this.page_index)
+		var target = -this.page_index*this.view_h;
+
+		var length = target-parseInt(that.pages_list.css('margin-top'));
+
+		var timer = setInterval(function () {
+			length = parseInt(length*9/10);
+			var y = parseInt(target-length);
+			that.pages_list.css('margin-top', y);
+
+			if (length == 0) {
+				clearInterval(timer)
+			}
+		},10)
+		
+		/*var target = (-(this.page_index-k))*this.view_h;
+		var length = target- (-this.page_index)*this.view_h;
+		//console.log(target)
+		var timer = setInterval(function () {
+			length = parseInt(length*9/10)
+			//console.log(target)
+			var y = parseInt(target-length);
+			pages_list.css('margin-top', y);
+
+			if (length == 0) {
+				clearInterval(timer)
+			}
+		}, 10)
+		
+		this.page_index += -k;*/
+		if(this.page_index>0){
+			this.go_top.show();
+		}else{
+			this.go_top.hide()
+		}
+		
+	}
+
+	//返回顶部
+	SwitchPage.prototype.setGoTop = function (select) {
+		this.go_top = $(select);
+		var that=this;
+		this.go_top.on('touchend', function(event) {
+			event.preventDefault();
+			that.page_index = 0;
+			that.switchPage();
+		});
 	}
 
 	var switchPage = new SwitchPage();
 
 
-	var $view      = $('.m-view'); //显示页面的可视窗口
+	var $view       = $('.m-view'); //显示页面的可视窗口
 	var $pages      = $('.child-view'); //所有页面
-	var $page_list = $('.child-views-list')
+	var $page_list  = $('.child-views-list')
 
+	switchPage.setGoTop('.go-top');
 	switchPage.switch($view,$page_list,$pages)
 	//console.log(view_h)
 

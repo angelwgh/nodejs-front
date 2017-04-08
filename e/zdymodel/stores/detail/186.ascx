@@ -14,6 +14,7 @@ for(int i=0;i<dt.Rows.Count;i++)
      DataTable imgDt = Get_File("stores","pa_imgs",Id);
 %>
 <div class="m-view">
+<div class="go-top" style="display:none"><i class="fa fa-arrow-circle-up"></i></div>
 <div class="child-views-list">
 <div class="title-pic child-view">
     <img src="<%=imgDt.Rows[0]["url"]%>">
