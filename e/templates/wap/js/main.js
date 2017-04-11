@@ -1,17 +1,18 @@
 require.config({
     　　　　paths: {
-    　　　　　　"jquery": "/e/templates/wap/jquery/dist/jquery.min"
+    　　　　　
+
     　　　　},
     		urlArgs: "bust=" +  (new Date()).getTime()
 });
 
-require(["jquery",'pageNav'], function ($,$pageNav){
+require(['pageNav','slide'], function ($pageNav,slide){
 
 	/**
 	 * 页面导航宽度、高度、字体大小自适应
 	 */
 	var $page_nav = $('.page-nav .btn');
-	$pageNav._setData($page_nav)
+	$pageNav.setDomStyle($page_nav)
 	
 	
 
@@ -52,5 +53,15 @@ require(["jquery",'pageNav'], function ($,$pageNav){
 	footBarStyle();
 
 	
+
 	
+	slide.config({
+		id:"home-page-silde",
+		img_arr:[
+			'/e/images/banner/wapbanner01.jpg',
+			'/e/images/banner/wapbanner02.jpg'
+		]
+	})
+	$('.main_box_inner').prepend(slide.html);
+	$('.carousel').carousel();
 });

@@ -1,4 +1,30 @@
 /**
+ * 首页轮播图
+ */
+
+#home-page-silde .carousel-indicators{
+	text-align: right;
+}
+#home-page-silde .carousel-indicators li{
+	width: 15px;
+	height: 15px;
+	margin-left: 5px;
+	border-radius: 0px;
+	border: 2px solid #FFF;
+	background-color: #31b0d5;
+	transition: 0.2s;
+	-webkit-transition: 0.2s;
+}
+#home-page-silde .carousel-indicators li.active{
+	width: 20px;
+	height: 20px;
+}
+#home-page-silde .carousel-control .fa{
+	position: absolute;
+	top: 50%;
+	font-size: 30px;
+}
+/**
  * 联系电话
  */
 .m-lxphone{

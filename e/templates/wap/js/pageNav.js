@@ -1,4 +1,4 @@
-define(['jquery'],function ($) {
+define([],function () {
 	function PageNav () {
 		
 	}
@@ -29,9 +29,11 @@ define(['jquery'],function ($) {
 	}
 
 	PageNav.prototype.setDomStyle = function (elem) {
-		this._setData(elem);
+		var that = this;
+		that._setData(elem);
 		$(window).resize(function () {
-			this._setData(elem);
+			that._setData(elem);
+			console.log(1)
 		})
 	}
 	var pageNav = new PageNav();

@@ -38,7 +38,8 @@ StoreDetails.prototype.closeDom = function(close_elem,close_class){
 var storeDetails = new StoreDetails();
 
 
-//console.log(storeDetails);
+
+
 
 (function () {
 	var $tel_num_list = $('.tel-num-list ul');
@@ -89,6 +90,9 @@ var storeDetails = new StoreDetails();
 	storeDetails.repeatLi($child_views_list,setPicImg,img_arr.length,false);
 
 })();
+
+
+//滑动切换页面
 !function () {
 	function SwitchPage () {
 		this._config()
@@ -152,16 +156,12 @@ var storeDetails = new StoreDetails();
 		console.log(move_y)
 		if (move_y) {
 			if(move_y>0){
-				/*k=1;//往下滑动
-				if (this.page_index <=0) {
-					return;
-				}*/
+			//往下滑动
+			
 				this.page_index = this.page_index <=0 ? this.page_index:this.page_index-1;
 			}else if (move_y<0) {
-				/*k=-1; //往上滑动
-				if(this.page_index >= this.page_num -1){
-					return
-				}*/
+				 //往上滑动
+				
 				this.page_index = this.page_index >= this.page_num-1 ? this.page_index  :this.page_index+1
 			}
 		}
@@ -181,21 +181,6 @@ var storeDetails = new StoreDetails();
 			}
 		},10)
 		
-		/*var target = (-(this.page_index-k))*this.view_h;
-		var length = target- (-this.page_index)*this.view_h;
-		//console.log(target)
-		var timer = setInterval(function () {
-			length = parseInt(length*9/10)
-			//console.log(target)
-			var y = parseInt(target-length);
-			pages_list.css('margin-top', y);
-
-			if (length == 0) {
-				clearInterval(timer)
-			}
-		}, 10)
-		
-		this.page_index += -k;*/
 		if(this.page_index>0){
 			this.go_top.show();
 		}else{
