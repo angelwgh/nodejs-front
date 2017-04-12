@@ -21,7 +21,7 @@ define([],function(){
 	Slide.prototype.slide=function(){
 		
 		var length           = this.img_arr.length;
-		console.log(length)
+
 		var C_indicators     = $('<ol class="carousel-indicators"></ol>');
 		var C_inner          = $('<div class="carousel-inner"></div>');
 

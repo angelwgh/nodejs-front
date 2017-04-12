@@ -20,8 +20,14 @@ for(int i=0;i<dt.Rows.Count;i++)
     <img src="<%=imgDt.Rows[0]["url"]%>">
 </div>
 <div class="tel-num child-view">
-    <div class="tel-icon">
-         <i class="fa fa-phone"></i>
+    <div class="innerbox">
+        <div class="adress"><%=dr["pa_store_num"].ToString()%></div>
+        <div class="mid-box">
+            <div class="tel-icon">
+                <i class="fa fa-phone"></i>
+            </div>
+        </div>
+        <div class="main-goods"><%=dr["content"].ToString()%></div>
     </div>
     <div class="tel-num-list">
           <div class="bg"></div>

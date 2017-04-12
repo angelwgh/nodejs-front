@@ -47,7 +47,20 @@
 }
 
 
-.tel-num::after{
+
+
+
+
+.tel-num .innerbox {
+	height: 100%
+}
+.tel-num .innerbox>div{
+	height: 33.33%;
+	color: #5dcdfd;
+	font-size: 20px;
+	padding: 0 10px;
+}
+.tel-num .innerbox> div::after{
 	content: '';
 	display: inline-block;
 	width: 0;
@@ -55,9 +68,9 @@
 	vertical-align: middle;
 }
 
+.tel-num .innerbox .adress{
 
-
-
+}
 .tel-num .tel-icon{
 	margin: 0px auto;
 	width: 100px;
@@ -97,12 +110,32 @@
 }
 .tel-num .tel-num-list.sd{
 	animation: close_tel-num-list 0.5s ease-out both;
+	-webkit-animation: close_tel-num-list 0.5s ease-out both;
 }
 .tel-num .tel-num-list.sp{
 	/* transform: scale(0, 0); */
 	animation: show_tel-num-list 0.5s ease-out both;
+	-webkit-animation: show_tel-num-list 0.5s ease-out both;
 }
 
+@-webkit-keyframes close_tel-num-list{
+	0% {/* transform: scale(0, 0) */
+
+		opacity: 1;
+		top: 0;
+		right: 0;
+		bottom: 0;
+		left: 0;
+	}
+	100% {/* transform: scale(1,1) */
+
+		opacity: 0;
+		top: 50%;
+		right: 50%;
+		bottom: 50%;
+		left: 50%;
+	}
+}
 @keyframes close_tel-num-list{
 	0% {/* transform: scale(0, 0) */
 
@@ -143,6 +176,7 @@
 
 .tel-num .tel-num-list ul{
 	position: absolute;
+	z-index: 999;
 	top: 50%;
 	width: 100%;
 	transform: translate(0, -50%);
@@ -150,6 +184,7 @@
 }
 
 .tel-num .tel-num-list ul li{
+
 	padding: 10px;
 	display: block;
 	overflow: hidden;

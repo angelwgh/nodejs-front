@@ -6,7 +6,7 @@ require.config({
     		urlArgs: "bust=" +  (new Date()).getTime()
 });
 
-require(['pageNav','slide'], function ($pageNav,slide){
+require(['pageNav','slide','storeList'], function ($pageNav,slide,storeList){
 
 	/**
 	 * 页面导航宽度、高度、字体大小自适应
@@ -54,7 +54,7 @@ require(['pageNav','slide'], function ($pageNav,slide){
 
 	
 
-	
+	//首页轮播图
 	slide.config({
 		id:"home-page-silde",
 		img_arr:[
@@ -62,6 +62,49 @@ require(['pageNav','slide'], function ($pageNav,slide){
 			'/e/images/banner/wapbanner02.jpg'
 		]
 	})
-	$('.main_box_inner').prepend(slide.html);
+	$('.sy_slide').prepend(slide.html);
 	$('.carousel').carousel();
+
+	//店铺列表
+	//console.log(store_list)
+	$('.m-storeslist').prepend(storeList.showList(store_list,5))
+
+	$('.m-storeslist .show-more').on('touchstart', function(event) {
+		event.preventDefault();
+		$(this).addClass('touch')
+	});
+
+	$('.m-storeslist .show-more').on('touchend', function(event) {
+		event.preventDefault();
+		$(this).removeClass('touch');
+		var lis = storeList.showMore(5);
+
+		if (lis.length==0) {
+			console.log(lis)
+			$(this).removeClass('show-more').addClass('no-more')
+		}
+		lis.forEach( function(element, index) {
+			$('.m-storeslist .items').append(element)
+		});
+	});
+	
+	//console.log(storeList(store_list,5))
+	
 });
+
+/*
+
+<li class="media">
+      <a href="<%=Detail_Url(dr)%>">
+      <div class="media-left">
+         
+             <img src="<%=dr["titlepic"].ToString()%>" style="width: 80px; height: 64px;">
+         
+      </div>
+      <div class="media-body">
+          <h4 class="media-heading"><%=dr["title"].ToString()%></h4>
+          <p>主营：<%=dr["content"].ToString()%></p>
+      </div>
+      </a>
+    </li>
+ */

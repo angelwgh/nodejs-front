@@ -47,6 +47,8 @@ var storeDetails = new StoreDetails();
 	var $show_tel_list =$('.tel-icon');
 	var $bg = $('.tel-num-list .bg');
 	var $child_views_list = $('.child-views-list');
+	var time =null;
+	var $tels =$('.tel-num-list ul')
 
 	//商户电话列表
 	function setLiElem (i) {
@@ -56,22 +58,58 @@ var storeDetails = new StoreDetails();
 	}
 	storeDetails.repeatLi($tel_num_list,setLiElem,storeDetails.data.tel.length,true)
 
+	
+	//console.log($tels)
 
-
-	$('.tel-num-list .close,.tel-num-list .bg').on('click', function(event) {
-		event.preventDefault();
-		$('.tel-num-list').removeClass('sp').addClass('sd');
-
-	});
-	$('.tel-num-list .close,.tel-num-list .bg').on('touchend',function (event) {
+	$tels.on('touchmove touchstart touchend',function (event) {
 		event.stopPropagation();
 	})
+	$tels.on('click',function () {
+		console.log('click')
+	})
+	
 
-	$show_tel_list.on('click', function(event) {
+	$('.tel-num-list .close,.tel-num-list .bg').on('touchstart', function(event) {
 		event.preventDefault();
-
-		$('.tel-num-list').removeClass('sd').addClass('sp');
+		event.stopPropagation();
 	});
+	$('.tel-num-list .close,.tel-num-list .bg').on('touchmove', function(event) {
+			event.preventDefault();
+			event.stopPropagation();
+			
+	});
+	$('.tel-num-list .close,.tel-num-list .bg').on('touchend',function (event) {
+		event.preventDefault();
+		event.stopPropagation();
+		$('.tel-num-list').removeClass('sp').addClass('sd');
+
+	})
+
+	$show_tel_list.on('touchstart', function(event) {
+		event.preventDefault();
+		event.stopPropagation();		
+	});
+	$show_tel_list.on('touchmove', function(event) {
+			event.preventDefault();
+			event.stopPropagation();
+
+	});
+	$show_tel_list.on('touchend',function (event) {
+			event.preventDefault();
+			event.stopPropagation();
+			if(navigator.userAgent.indexOf('UCBrowser') > -1) {
+			   $('.tel-num-list').css({
+				top: 0,
+				right:0,
+				bottom:0,
+				left:0,
+				opacity :1
+			});
+			}
+			$('.tel-num-list').removeClass('sd').addClass('sp');
+			
+			//alert($('.tel-num-list').attr('class'))
+	})
 
 
 	//图片列表
@@ -83,10 +121,10 @@ var storeDetails = new StoreDetails();
 
 	function setPicImg (i) {
 		return '<div class="pic child-view">'+
-					'<img src="'+img_arr[i]+'">'+
+					'<img src="/e/templates/wap/images/loading.png" data-src="'+img_arr[i]+'">'+
 		       '</div>'
 	}
-	console.log(img_arr)
+	//console.log(img_arr)
 	storeDetails.repeatLi($child_views_list,setPicImg,img_arr.length,false);
 
 })();
@@ -110,6 +148,7 @@ var storeDetails = new StoreDetails();
 		this.pages_list= pages_list;
 		this.view_h    = this.view[0].offsetHeight  //可视窗口的高度
 		this.page_num  = this.pages.length;
+
 		pages.height(this.view_h);                  //设置页面高度
 	};
 
@@ -121,19 +160,30 @@ var storeDetails = new StoreDetails();
 		var that = this;
 		var start_y=0;
 		var end_y  =0;
-
+		var mt     = 0;
 		view.addEventListener('touchstart',touchStart(event))
 
 		function touchStart (e) {
 			return function (e) {
+				e.preventDefault();
 				var touch = e.changedTouches[0];
 				start_y   = touch.screenY;
-				
+				mt       = parseInt(that.pages_list.css('margin-top'))
+				//console.log(start_y)
 			}	
 		}
+		view.addEventListener('touchmove',function(event){
+			event.preventDefault();
+			var touch  = event.targetTouches[0];
+			var move_y = touch.screenY-start_y;
+			
+			that.pages_list.css('margin-top',mt+move_y);
+
+		})
 		view.addEventListener('touchend', touchEnd(event));
 		function touchEnd (e) {
 			return function (e) {
+				e.preventDefault();
 				var touch = e.changedTouches[0];
 				end_y = touch.screenY;
 
@@ -146,14 +196,19 @@ var storeDetails = new StoreDetails();
 		function switchPage (pages_list,move_y){
 			return that.switchPage(move_y)
 		}
+		
 
 	}
-
+	SwitchPage.prototype.loadImg = function(){
+		if(this.page_index<=1) return ;
+		var k=this.page_index;
+		var img = $(this.pages[k].children)
+		var src = img.data().src;
+		img.attr('src', src);
+	};
 	SwitchPage.prototype.switchPage=function (move_y) {
 		var k = 0;
 		var that=this;
-		console.log(this.page_index)
-		console.log(move_y)
 		if (move_y) {
 			if(move_y>0){
 			//往下滑动
@@ -166,7 +221,6 @@ var storeDetails = new StoreDetails();
 			}
 		}
 
-		console.log(this.page_index)
 		var target = -this.page_index*this.view_h;
 
 		var length = target-parseInt(that.pages_list.css('margin-top'));
@@ -186,6 +240,8 @@ var storeDetails = new StoreDetails();
 		}else{
 			this.go_top.hide()
 		}
+		
+		this.loadImg();
 		
 	}
 

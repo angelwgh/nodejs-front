@@ -7,7 +7,7 @@ html{-webkit-text-size-adjust:none;}
 body,div,dl,dt,dd,ul,ol,li,h1,h2,h3,h4,h5,h6,pre,code,form,fieldset,legend,input,textarea,th,td,p,blockquote,hr,button,article,aside,details,figcaption,figure,footer,header,hgroup,menu,nav,section{margin:0px;padding:0px;}
 article,aside,details,figcaption,figure,footer,header,hgroup,menu,nav,section{display:block;}
 audio,canvas,video{display:inline-block;*display:inline;*zoom:1;}
-body{font:14px/1.8 "Segoe UI",Tahoma,Verdana,Arial,\5b8b\4f53;background-color:#9FCCDF;color:#333}
+body{font:14px/1.8 "微软雅黑","Segoe UI",Tahoma,Verdana,Arial,\5b8b\4f53;background-color:#9FCCDF;color:#333}
 
 input,select,textarea,button{font-size:100%;}
 table{border-collapse:collapse;border-spacing:0;}

@@ -85,46 +85,59 @@
 
 /*首页店铺列表模块*/
 
-.m-storeslist > ul > li{
-	float: left;
-	width: 50%;
-	padding: 10px 20px;
-	box-sizing: border-box;
-}  
+.m-storeslist img{
+	max-width: 800px;
 
-@media (max-width: 760px) {
-	.m-storeslist > ul > li{
-		padding: 2px 5px;
-	}
-	
 }
 
-.m-storeslist > ul > li > a {
-	display: block;
-    border-radius: 10px;
-    border: 1px solid #ff6600;
-    box-shadow: 0 3px 3px #aaa;
-    box-sizing: border-box;
-    overflow: hidden;
+.m-storeslist .items .media{
+	padding: 10px 10px;
+    border-radius: 5px;
+    
+    border: 1px solid #5bc0de;
+    background-color: #fff;
 }
 
-
-
-.m-storeslist > ul > li > a > img{
-	max-width: 100%;
-    height: auto;
-    display: block;
-    width: 100%;
+.m-storeslist .items .media a{
+	color: #333;
+}
+.m-storeslist .items .media a:focus{
+	text-decoration: none
 }
 
-.m-storeslist > ul > li > a > span{
-	display: block;
-    text-align: center;
-    font: 30px/60px '微软雅黑';
+.m-storeslist .items .media .media-left .img{
+	padding: 3px;
+    border: 1px solid #5bc0de;
+    border-radius: 5px;
+
 }
 
-@media (max-width: 760px) {
-	.m-storeslist > ul > li > a > span{
-		font: 15px/30px '微软雅黑';
-	}
+.m-storeslist .items .media .media-body{
+	padding-left: 20px;
+}
+
+.m-storeslist .show-more{
+	width: 100%;
+	height: 50px;
+	line-height: 50px;
+	text-align: center;
+	color: #fff;
+	font-size: 40px;
+	font-weight: 700;
+	border-radius: 10px;
+	background-color: #5bc0de;
+}
+.m-storeslist .no-more{
+	width: 100%;
+	height: 50px;
+	line-height: 50px;
+	text-align: center;
+	color: #fff;
+	font-size: 40px;
+	font-weight: 700;
+	border-radius: 10px;
+	background-color: #CCC;
+}
+.m-storeslist .show-more.touch{
+	background-color: #0B93BB;
 }
