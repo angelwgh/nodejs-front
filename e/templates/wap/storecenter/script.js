@@ -126,7 +126,6 @@ var storeDetails = new StoreDetails();
 	}
 	//console.log(img_arr)
 	storeDetails.repeatLi($child_views_list,setPicImg,img_arr.length,false);
-
 })();
 
 
@@ -264,7 +263,7 @@ var storeDetails = new StoreDetails();
 	var $page_list  = $('.child-views-list')
 
 	switchPage.setGoTop('.go-top');
-	switchPage.switch($view,$page_list,$pages)
-	//console.log(view_h)
+	switchPage.switch($view,$page_list,$pages);
+
 
 }()

@@ -14,9 +14,11 @@ for(int i=0;i<dt.Rows.Count;i++)
      DataTable imgDt = Get_File("stores","pa_imgs",Id);
 %>
 <div class="m-view">
+
 <div class="go-top" style="display:none"><i class="fa fa-arrow-circle-up"></i></div>
 <div class="child-views-list">
 <div class="title-pic child-view">
+    <div class="access">人气<span id="clicks"></span></div>
     <img src="<%=imgDt.Rows[0]["url"]%>">
 </div>
 <div class="tel-num child-view">
@@ -44,7 +46,9 @@ for(int i=0;i<dt.Rows.Count;i++)
        store_data.tel = '<%=dr["pa_tel"].ToString()%>';//联系电话
        store_data.floor = '<%=Sort_Name(int.Parse(dr["Sort_Id"].ToString()))%>';//楼层
        store_data.store_num = '<%=dr["pa_store_num"].ToString()%>'//店铺地址
-       store_data.title = '<%=dr["title"].ToString()%>'
+       store_data.title = '<%=dr["title"].ToString()%>';
+       store_data.id = <%=dr["id"]%>;
+       store_data.clicks = <%=dr["clicks"].ToString()%>
        <%
           string imgUrl = String.Empty;
           for(int j=0; j<imgDt.Rows.Count;j++)

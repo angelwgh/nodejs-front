@@ -253,7 +253,7 @@ function Code_Change(Id)
   obj.src="/e/aspx/yzm.aspx?r="+R;
  }
 
-
+//点击数
 function Get_Info(Table,Id)
  {
    var objclicks=document.getElementById("clicks");

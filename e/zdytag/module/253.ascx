@@ -2,5 +2,14 @@
 <% @ Import NameSpace="System.Data"%>
 <% @ Import NameSpace="System.Data.OleDb"%>
 <%Start();%>
-<% @ Register TagPrefix="ascx" TagName="M_0" src="/e/zdymodel/stores/module/189.ascx"%><ascx:M_0 runat="server" TagSiteId=1 SiteId=9 ZdyTag=1 ModuleId="253_0" TagTable="stores" TagSortId=0 SqlOrder="order by " SqlCondition="" ShowNum=5 TagZtId=0 TitleNum=50 TitlePicWidth=150 TitlePicHeight=150 TheTarget="_self"/>
+<script src="/e/aspx/ajax_list.aspx?modelid=190" type="text/javascript"></script>
+<div class="m-stores-list">
+    <ul class="items">
+    </ul>
+    <div class="show-more">
+         <i class="fa fa-angle-double-down"></i>
+    </div>
+</div>
+
+
 <%End();%>

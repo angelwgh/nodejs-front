@@ -24,6 +24,7 @@
         title:'<%=dr["title"].ToString()%>',
         content:'<%=dr["content"].ToString()%>',
         url:'<%=Detail_Url(dr)%>',
+        clicks:'<%=dr["clicks"].ToString()%>'
     };
 
     
