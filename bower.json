@@ -1,0 +1,27 @@
+{
+  "name": "learn",
+  "description": "",
+  "main": "index.js",
+  "authors": [
+    "angelwgh <angel_wgh@163.com>"
+  ],
+  "license": "ISC",
+  "homepage": "https://github.com/angelwgh/w.gh",
+  "ignore": [
+    "**/.*",
+    "node_modules",
+    "bower_components",
+    "test",
+    "tests"
+  ],
+  "devDependencies": {
+    "angular": "^1.6.4",
+    "angular-ui-router": "^1.0.5",
+    "requirejs": "^2.3.3",
+    "jquery": "1.11.0",
+    "bootstrap": "^3.3.7",
+    "oclazyload": "^1.1.0",
+    "angular-sanitize": "^1.6.4",
+    "angular-marked": "^1.2.2"
+  }
+}

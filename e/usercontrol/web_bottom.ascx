@@ -1,1 +1,0 @@
-﻿<%@ Control language="c#" Inherits="PageAdmin.web_bottom"%>

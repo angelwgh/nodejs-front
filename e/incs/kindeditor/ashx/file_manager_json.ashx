@@ -1,1 +1,0 @@
-﻿<%@ webhandler Language="C#" class="LitJson.Editor_FileManager" %>

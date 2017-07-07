@@ -1,1 +1,0 @@
-﻿<% @ Control Language="C#" Inherits="PageAdmin.web_banner"%><%=Banner%>
